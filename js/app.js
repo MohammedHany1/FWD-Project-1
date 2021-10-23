@@ -1,9 +1,11 @@
+// Variables
 let navList = document.getElementById("nav-list");
 let [...sctions] = document.getElementsByClassName("section");
 let	navItems = document.getElementsByClassName("nav-item");
 let sctionsIds = sctions.map(sec => sec.id);
 let navbarData = sctions.map(sec => sec.getAttribute("nav-data"));
 
+// Get a section to scroll to
 let getSction = (sction) => {
 	sction.preventDefault();
 	let goal = sction.target.getAttribute("data-scroll-to");
@@ -11,12 +13,14 @@ let getSction = (sction) => {
 	el.scrollIntoView();
 };
 
+// Check if section is in view port
 let checkIfInView = (el) => {
     let { top, bottom } = el.getBoundingClientRect();
 		let screenHght = window.innerHeight || document.documentElement.clientHeight;
   	return bottom >= 0 && top <= screenHght
 };
 
+// Activate a specific section
 let activeSection = () => {
     sctions.map((section) => {
       window.addEventListener("scroll", (event) => {
@@ -27,6 +31,7 @@ let activeSection = () => {
     });
   };
 
+// Create the nav bar
   let createNavBar = (navbar, listItems, sctionIds) => {
 	let frgment = document.createDocumentFragment();
 
@@ -44,5 +49,6 @@ let activeSection = () => {
 	navbar.appendChild(frgment);
 };
 
+// Call the functions
 createNavBar(navList, navbarData, sctionsIds);
 activeSection()
