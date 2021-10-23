@@ -10,7 +10,7 @@ let getSction = (sction) => {
 	sction.preventDefault();
 	let goal = sction.target.getAttribute("data-scroll-to");
 	let el = document.querySelector(goal);
-	el.scrollIntoView();
+	el.scrollIntoView({ behavior: "smooth" });
 };
 
 // Check if section is in view port
