@@ -1,6 +1,6 @@
 # FWD-Project-1
 
-This is the first project of Front End Web Development Proffesional track with egFWD 
+This is the first project of Front End Web Development Professional track with egFWD 
 
 Project contains a simple landing page with a dynamic nav bar which adds the new sections by itself
 
